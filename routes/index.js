@@ -29,7 +29,7 @@ router.get('/:shortUrl', async (req, res) => {
   res.redirect(shortUrl.full)
 });
 
-router.post('/admin/:id', async (req, res) => {
+router.post('/:id', async (req, res) => {
   await ShortUrl.findOneAndDelete({ id: req.params.id })
   res.redirect('/')
 })
